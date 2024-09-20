@@ -1,11 +1,23 @@
 "use client";
 import React from "react";
+import { useState } from "react";
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import FileUpload from "./Upload";
+import FileViewer from "./FileView";
+
 function Home() {
   const route = useRouter();
+  const [files, setFiles] = useState<File[]>([]);
+  const handleFileUpload = (files: File[]) => {
+    setFiles(files);
+    console.log(files);
+  };
+  const [url, setUrl] = useState<string>("");
+  const ipfsHash = "QmeFqmQupbMWVsCHZys2rTbTzUzjcDcBRzA8813VyWyHL9";
   return (
     <div>
       <div className="fixed z-[999] w-full px-20 py-6 flex  items-center justify-between ">
@@ -22,6 +34,25 @@ function Home() {
           </button>
         </div>
       </div>
+      <main className="flex items-center justify-center min-h-screen bg-gray-100">
+        <FileUpload />
+        <main className="flex items-center justify-center min-h-screen bg-gray-100">
+          <FileViewer ipfsHash={ipfsHash} />
+        </main>
+        {url && (
+          <div className="mt-4 text-center">
+            <p>Uploaded File URL:</p>
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 underline"
+            >
+              {url}
+            </a>
+          </div>
+        )}
+      </main>
     </div>
   );
 }
