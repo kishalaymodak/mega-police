@@ -1,16 +1,20 @@
 "use client";
 import React from "react";
 import { useState } from "react";
-
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-
 import FileViewer from "./FileView";
 import FileUploading from "./Upload";
+import { getData } from "../../actions/getData";
 
 function Home() {
+  console.log(id);
+
+  const data = getData(id);
+  console.log(data);
+
   const route = useRouter();
   const [files, setFiles] = useState<File[]>([]);
   const handleFileUpload = (files: File[]) => {

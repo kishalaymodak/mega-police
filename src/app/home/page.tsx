@@ -6,9 +6,12 @@ import React from "react";
 
 async function home() {
   const session = await getServerSession(authOption);
+  console.log(session.user.id);
+
   if (!session) {
     redirect("/logIn");
   }
+
   return (
     <div>
       <Home />

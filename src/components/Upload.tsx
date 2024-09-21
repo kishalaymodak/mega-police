@@ -16,7 +16,7 @@ const FileUploading = () => {
   const [caseFilerName, setCaseFilerName] = useState<string>("");
   const [caseId, setCaseId] = useState<string>("");
 
-  const session = useSession(); // Fixed typo: 'seassion' to 'session'
+  const session = useSession();
 
   const handleFileChange = (files: File[]) => {
     if (files.length > 0) {
