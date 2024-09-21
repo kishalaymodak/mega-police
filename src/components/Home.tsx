@@ -9,11 +9,12 @@ import FileViewer from "./FileView";
 import FileUploading from "./Upload";
 import { getData } from "../../actions/getData";
 
-function Home() {
-  console.log(id);
+interface data {
+  id: string;
+}
 
-  const data = getData(id);
-  console.log(data);
+function Home({ id }: data) {
+  console.log(id);
 
   const route = useRouter();
   const [files, setFiles] = useState<File[]>([]);
