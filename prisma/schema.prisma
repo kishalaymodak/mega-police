@@ -25,7 +25,7 @@ model User{
 
 model Case{
   id String @id @default(uuid())
-  caseId String
+  caseId String 
   caseFilerName String
   casefileHash  String
   author User @relation(fields: [authorId],references: [id])

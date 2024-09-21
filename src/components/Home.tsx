@@ -6,8 +6,9 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import FileUpload from "./Upload";
+
 import FileViewer from "./FileView";
+import FileUploading from "./Upload";
 
 function Home() {
   const route = useRouter();
@@ -34,11 +35,11 @@ function Home() {
           </button>
         </div>
       </div>
-      <main className="flex items-center justify-center min-h-screen bg-gray-100">
-        <FileUpload />
-        <main className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div>
+        <FileUploading />
+        {/* <div>
           <FileViewer ipfsHash={ipfsHash} />
-        </main>
+        </div>
         {url && (
           <div className="mt-4 text-center">
             <p>Uploaded File URL:</p>
@@ -51,8 +52,8 @@ function Home() {
               {url}
             </a>
           </div>
-        )}
-      </main>
+        )} */}
+      </div>
     </div>
   );
 }
