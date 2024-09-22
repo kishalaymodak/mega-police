@@ -6,7 +6,6 @@ import { FileUpload } from "./ui/file-upload";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { cn } from "@/lib/utils";
-import { redirect } from "next/navigation";
 
 const FileUploading = () => {
   const [file, setFile] = useState<File | null>(null);

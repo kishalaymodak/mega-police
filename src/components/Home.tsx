@@ -1,14 +1,9 @@
 "use client";
 import React from "react";
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import FileViewer from "./FileView";
-import FileUploading from "./Upload";
-import { getData } from "../../actions/getData";
-import DashBoard from "./DashBoard";
 
 type data = {
   id: string;

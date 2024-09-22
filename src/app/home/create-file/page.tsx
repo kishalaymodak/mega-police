@@ -1,8 +1,8 @@
 import DashBoard from "@/components/DashBoard";
-import FileUploading from "@/components/Upload";
+
 import { authOption } from "@/lib/auth/auth";
 import { getServerSession } from "next-auth";
-import { signOut } from "next-auth/react";
+
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
