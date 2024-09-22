@@ -7,16 +7,16 @@ import { getData } from "../../../actions/getData";
 
 async function home() {
   const session = await getServerSession(authOption);
-  console.log(session.user.id);
-  const id = session.user.id;
+
   if (!session) {
-    redirect("/logIn");
+    redirect("/");
   }
+  const id = session.user.id;
   const data = await getData(id);
   console.log(data);
   return (
     <div>
-      <Home id={id} />
+      <Home case={data?.case ?? []} id={id} />
     </div>
   );
 }

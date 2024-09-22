@@ -6,6 +6,7 @@ import { FileUpload } from "./ui/file-upload";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { cn } from "@/lib/utils";
+import { redirect } from "next/navigation";
 
 const FileUploading = () => {
   const [file, setFile] = useState<File | null>(null);
@@ -73,11 +74,11 @@ const FileUploading = () => {
   };
 
   return (
-    <div>
+    <div className="">
       <form onSubmit={uploadFile}>
         <FileUpload onChange={handleFileChange} />
         <LabelInputContainer>
-          <Label htmlFor="lastname">Police Station No.</Label>
+          <Label htmlFor="lastname">Case File Name</Label>
           <Input
             onChange={(e) => {
               setCaseFilerName(e.target.value);
@@ -88,7 +89,7 @@ const FileUploading = () => {
           />
         </LabelInputContainer>
         <LabelInputContainer>
-          <Label htmlFor="lastname">Police Station No.</Label>
+          <Label htmlFor="lastname">Case Id</Label>
           <Input
             onChange={(e) => {
               setCaseId(e.target.value);

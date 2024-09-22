@@ -8,9 +8,7 @@ const FileViewer: React.FC<FileViewerProps> = ({ ipfsHash }) => {
   const fileUrl = `https://gateway.pinata.cloud/ipfs/${ipfsHash}`;
 
   return (
-    <div className="max-w-md mx-auto p-4 border rounded-lg shadow-lg bg-white">
-      <h2 className="text-xl font-bold mb-4">File Viewer</h2>
-      <p className="mb-2">IPFS Hash: {ipfsHash}</p>
+    <div className="">
       <a
         href={fileUrl}
         target="_blank"
@@ -30,10 +28,9 @@ const FileViewer: React.FC<FileViewerProps> = ({ ipfsHash }) => {
         ) : ipfsHash.endsWith(".mp4") ? (
           <video controls className="mt-4 max-w-full h-auto">
             <source src={fileUrl} type="video/mp4" />
-            Your browser does not support the video tag.
           </video>
         ) : (
-          <p className="mt-4">File type not supported for preview.</p>
+          <p className="mt-4"></p>
         )}
       </div>
     </div>
