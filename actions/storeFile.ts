@@ -1,4 +1,5 @@
 "use server";
+import { db } from "../db/db";
 import client from "../db/index";
 
 interface FileData {
@@ -15,6 +16,7 @@ export async function storeFile({
   authorId,
 }: FileData) {
   const CaseFileName = caseFilerName.toUpperCase();
+
   const res = await client.case.create({
     data: {
       caseId,

@@ -8,7 +8,7 @@ export function Landing() {
         Mega Police
       </h2>
       <p className="max-w-xl mx-auto text-sm md:text-lg text-neutral-700 dark:text-neutral-400 text-center">
-        Mega Police is the one stop solutoion for storing importaint data
+        Mega Police is the one stop solution for storing important data
       </p>
     </BackgroundLines>
   );
