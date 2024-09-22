@@ -3,21 +3,15 @@ import React, { useState } from "react";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { cn } from "@/lib/utils";
-import {
-  IconBrandGithub,
-  IconBrandGoogle,
-  IconBrandOnlyfans,
-} from "@tabler/icons-react";
 
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 
 export function LogIn() {
-  const [StationName, setStationName] = useState("");
   const [StationId, setStationId] = useState("");
-  const [email, setEmail] = useState("");
+
   const [password, setPassword] = useState("");
-  const [phNumber, setPhNumber] = useState("");
+
   const route = useRouter();
   return (
     <div className="md:px-28 w-full mx-auto rounded-none md:rounded-2xl p-4 md:py-8  shadow-input bg-white dark:bg-black">
